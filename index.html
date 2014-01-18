@@ -11,6 +11,7 @@
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="lib/bootstrap/css/bootstrap.min.css"/>
 </head>
+
 <body>
 
 <div id="wrap">
@@ -21,19 +22,20 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">Repositories</div>
-
-            <table id="repositories" class="table table-striped">
-                <tbody>
-                </tbody>
-            </table>
+            <div id="repositories" class="list-group">
+            </div>
         </div>
     </div>
 </div>
+</div>
 
 </body>
+
 <script id="rowTemplate" type="text/template">
-    <td><%=name%></td>
+    <h4 class="list-group-item-heading"><%=name%></h4>
+    <p class="list-group-item-text"><%=description%></p>
 </script>
+
 <script src="js/repositories.js"></script>
 <script src="js/play.js"></script>
 </html>
