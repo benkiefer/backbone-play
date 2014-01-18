@@ -16,8 +16,8 @@ var RepositoryListView = Backbone.View.extend({
 
     initialize: function () {
         this.collection = new RepositoryList();
-        this.listenTo(this.collection, 'reset add change remove', this.render, this);
-        this.collection.fetch();
+        this.collection.bind('reset', this.render, this);
+        this.collection.fetch({reset: true});
     },
 
     render: function () {
@@ -25,6 +25,7 @@ var RepositoryListView = Backbone.View.extend({
         _.each(this.collection.models, function (item) {
             that.renderRepo(item);
         }, this);
+        return this;
     },
 
     renderRepo: function (item) {
@@ -41,7 +42,6 @@ var RepositoryList = Backbone.Collection.extend({
     model: Repository,
     url: 'https://api.github.com/users/benkiefer/repos',
     parse: function (response) {
-        console.log(response[0]);
         return response;
     }
 });
