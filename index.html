@@ -10,6 +10,7 @@
     <script src="lib/backbone/backbone.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="lib/bootstrap/css/bootstrap.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -17,7 +18,9 @@
 <div id="wrap">
     <div class="container">
         <div class="page-header">
-            <h1>Ben Kiefer</h1>
+            <h1>Ben Kiefer
+                <small>(benkiefer)</small>
+            </h1>
         </div>
 
         <div class="panel panel-default">
@@ -33,6 +36,7 @@
 
 <script id="rowTemplate" type="text/template">
     <h4 class="list-group-item-heading"><%=name%></h4>
+
     <p class="list-group-item-text"><%=description%></p>
 </script>
 
